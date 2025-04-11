@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+
+  }
+}
+
+@layer utilities {
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .hero-glow {
+    box-shadow: 0 0 40px rgba(0, 204, 255, 0.15);
+  }
+
+  .navbar-blur {
+    backdrop-filter: blur(8px);
+  }
+  
+  /* Custom cursor styles */
+  .custom-cursor {
+    cursor: none;
+  }
+  
+  .custom-cursor a,
+  .custom-cursor button,
+  .custom-cursor [role="button"],
+  .custom-cursor .interactive {
+    cursor: none;
+  }
+
+  /* Animation for hero element fade in */
+  .animate-fade-in-slow {
+    animation: fadeIn 1.5s ease-in-out forwards;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  @keyframes pulse-glow {
+    0%, 100% {
+      opacity: 0.6;
+      box-shadow: 0 0 15px rgba(0, 204, 255, 0.4);
+    }
+    50% {
+      opacity: 1;
+      box-shadow: 0 0 25px rgba(0, 204, 255, 0.7);
+    }
+  }
+  
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes fadeOut {
+    0% { opacity: 0.8; transform: translateY(0) scale(1); }
+    100% { opacity: 0; transform: translateY(20px) scale(0.5); }
+  }
+  
+  @keyframes shine {
+    100% {
+      left: 125%;
+    }
+  }
+  
+  .animate-shine {
+    animation: shine 1.5s ease-in-out;
+  }
+}
